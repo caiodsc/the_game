@@ -70,4 +70,10 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Rubocop
+  config.generators.after_generate do |files|
+    parsable_files = files.filter { |file| file.end_with?('.rb') }
+    system("bundle exec rubocop -A --fail-level=E #{parsable_files.shelljoin}", exception: true) unless parsable_files.empty?
+  end
 end
