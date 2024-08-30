@@ -1,0 +1,5 @@
+inherit_from: .rubocop_auto_gen.yml
+
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
