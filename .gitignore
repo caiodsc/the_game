@@ -34,3 +34,6 @@
 
 # Ignore IDE stuff
 .idea
+
+# Ignore coverage (simplecov)
+coverage
