@@ -1,11 +1,15 @@
 # frozen_string_literal: true
 
 class Board < ApplicationRecord
+  MAX_GENERATIONS = 100
+
   serialize :grid, type: Array, coder: JSON
 
   validates :height, :width, :grid, presence: true
   validates :height, :width, numericality: { greater_than: 0 }
-  validate :grid_width_consistency
+  validates :generation, inclusion: { in: -> { 0..MAX_GENERATIONS } }
+
+  validate :grid_width_consistency, on: :create
 
   after_initialize :set_dimensions
 
