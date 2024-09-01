@@ -8,3 +8,7 @@ Metrics/BlockLength:
   Exclude:
     - 'config/**/*'
     - 'spec/**/*'
+
+Naming/MethodParameterName:
+  Exclude:
+    - 'app/services/generation_service.rb'
