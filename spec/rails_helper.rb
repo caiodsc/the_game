@@ -1,13 +1,7 @@
 # frozen_string_literal: true
 
 # Simplecov
-require 'simplecov'
-SimpleCov.start 'rails' do
-  add_group 'Services', 'app/services'
-
-  add_filter '/mailers/'
-  add_filter '/channels/'
-end
+require 'support/simplecov'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
