@@ -9,11 +9,15 @@ class Board < ApplicationRecord
 
   after_initialize :set_dimensions
 
+  def token
+    Digest::MD5.hexdigest(grid.join)
+  end
+
   private
 
   def set_dimensions
     self.height = grid.size
-    self.width = (grid.first || []).size
+    self.width = Array(grid.first).size
   end
 
   def grid_width_consistency

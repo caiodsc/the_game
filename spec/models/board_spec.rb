@@ -27,6 +27,22 @@ RSpec.describe Board, type: :model do
     end
   end
 
+  describe 'methods' do
+    describe 'token' do
+      subject(:token) { described_class.new(grid:).token }
+
+      let(:grid) do
+        [
+          [0, 0, 0],
+          [1, 1, 1],
+          [0, 0, 0]
+        ]
+      end
+
+      it { is_expected.to eq(Digest::MD5.hexdigest(grid.join)) }
+    end
+  end
+
   describe 'callbacks' do
     context 'after initialize' do
       let(:grid) { [[1, 0], [0, 1]] }
