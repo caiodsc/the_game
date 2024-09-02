@@ -1,11 +1,11 @@
 version: '3.8'
 
 services:
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ["bundle", "exec", "rspec"]
+    command: ["sh", "-c", "bundle exec rails db:create db:schema:load && bundle exec rspec"]
     volumes:
       - ".:/rails"
     depends_on:
@@ -23,7 +23,7 @@ services:
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=game_of_life_development
+      - POSTGRES_DB=game_of_life_test
     networks:
       - app-network
 
