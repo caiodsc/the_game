@@ -124,10 +124,9 @@ RSpec.describe BoardsController, type: :request do
       end
 
       it 'persists the updated board' do
-        expect do
-          post "/boards/#{board.id}/next"
-          board.reload
-        end.to change(board, :attributes).to include('generation' => first_generation, 'grid' => first_generation_grid)
+        post "/boards/#{board.id}/next"
+
+        expect(board.reload).to have_attributes(generation: first_generation, grid: first_generation_grid)
       end
     end
 
@@ -189,10 +188,9 @@ RSpec.describe BoardsController, type: :request do
       end
 
       it 'updates the board to the final state' do
-        expect do
-          get "/boards/#{board.id}/final_state"
-          board.reload
-        end.to change(board, :attributes).to include('generation' => final_state_generation, 'grid' => final_state_grid)
+        get "/boards/#{board.id}/final_state"
+
+        expect(board.reload).to have_attributes(generation: final_state_generation, grid: final_state_grid)
       end
     end
 
