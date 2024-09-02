@@ -7,7 +7,10 @@ class Board < ApplicationRecord
 
   validates :height, :width, :grid, presence: true
   validates :height, :width, numericality: { greater_than: 0 }
-  validates :generation, inclusion: { in: -> { 0..MAX_GENERATIONS } }
+  validates :generation, numericality: {
+    less_than_or_equal_to: -> { MAX_GENERATIONS },
+    message: 'exceeded max generations'
+  }
 
   validate :grid_width_consistency, on: :create
 
