@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: ["sh", "-c", "bundle exec rails db:create db:schema:load && bundle exec rspec"]
+    command: ["bundle", "exec", "rspec"]
     volumes:
       - ".:/rails"
     depends_on:
