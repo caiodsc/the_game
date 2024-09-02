@@ -56,6 +56,8 @@ xdg-open coverage/index.html
 ```
 Results:
 
+![Captura de tela de 2024-09-01 23-36-44](https://github.com/user-attachments/assets/8f7a003c-5f82-4baa-9536-5ad8f1be0483)
+
 ## Running the Server
 
 Run the server with the following command:
