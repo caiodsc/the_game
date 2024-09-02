@@ -92,10 +92,8 @@ The `BoardsController` provides endpoints for managing game boards. This include
     "id": 1,
     "grid": "[[0, 1], [1, 0]]",
     "created_at": "2024-09-01T00:00:00Z",
-    "updated_at": "2024-09-01T00:00:00Z",
-    ...
-  },
-  ...
+    "updated_at": "2024-09-01T00:00:00Z"
+  }
 ]
 ```
 
@@ -120,8 +118,7 @@ The `BoardsController` provides endpoints for managing game boards. This include
   "id": 1,
   "grid": "[[0, 1], [1, 0]]",
   "created_at": "2024-09-01T00:00:00Z",
-  "updated_at": "2024-09-01T00:00:00Z",
-  ...
+  "updated_at": "2024-09-01T00:00:00Z"
 }
 ```
 
@@ -153,8 +150,7 @@ The `BoardsController` provides endpoints for managing game boards. This include
   "id": 1,
   "grid": "[[0, 1], [1, 0]]",
   "created_at": "2024-09-01T00:00:00Z",
-  "updated_at": "2024-09-01T00:00:00Z",
-  ...
+  "updated_at": "2024-09-01T00:00:00Z"
 }
 ```
 - **Status Code:** 422 Unprocessable Entity (if validation fails)
@@ -190,8 +186,7 @@ The `BoardsController` provides endpoints for managing game boards. This include
   "id": 1,
   "grid": "[[1, 0], [0, 1]]",
   "created_at": "2024-09-01T00:00:00Z",
-  "updated_at": "2024-09-01T00:00:00Z",
-  ...
+  "updated_at": "2024-09-01T00:00:00Z"
 }
 ```
 - **Status Code:** 400 Bad Request (if there is an error)
@@ -225,8 +220,7 @@ The `BoardsController` provides endpoints for managing game boards. This include
   "id": 1,
   "grid": "[[0, 0], [0, 0]]",
   "created_at": "2024-09-01T00:00:00Z",
-  "updated_at": "2024-09-01T00:00:00Z",
-  ...
+  "updated_at": "2024-09-01T00:00:00Z"
 }
 ```
 - **Status Code:** 400 Bad Request (if there is an error)
